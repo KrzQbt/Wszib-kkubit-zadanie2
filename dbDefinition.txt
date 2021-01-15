@@ -1,0 +1,9 @@
+--Definicje bazy danych hw2:
+
+CREATE TABLE `hw2`.`tuser` ( `id` SERIAL NOT NULL , `login` VARCHAR(40) NOT NULL , `pass` VARCHAR(40) NOT NULL , `role` VARCHAR(5) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`login`)) ENGINE = InnoDB; 
+
+
+CREATE TABLE `hw2`.`tproduct` ( `id` SERIAL NOT NULL , `name` VARCHAR(50) NOT NULL , `description` TEXT NOT NULL , `type` TEXT NOT NULL , `amount` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
+
+
+

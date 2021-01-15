@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>heh</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="/forms.css">
+
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li> <a  th:href="@{/main}" > main </a></li>
+        <li><a th:href="@{/logout}"> logout </a></li>
+
+
+    </ul>
+
+</nav>
+
+
+<div id="content">
+    <form method="post" id="addForm">
+        <input type="text" th:field="*{product.name}" placeholder="name">
+        <input type="text" th:field="*{product.descpription}" placeholder="description">
+        <input type="text" th:field="*{product.type}" placeholder="image link(from internet)">
+        <input type="text" th:field="*{product.amount}" placeholder="amount">
+
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
+</body>
+</html>

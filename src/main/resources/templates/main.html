@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a  th:if="${!isLogged}" th:href="@{/login}"> login </a></li>
+        <li> <a th:if="${!isLogged}" th:href="@{/register}" > register </a></li>
+        <li><a th:if="${isLogged}"  th:href="@{/add}" > add product </a></li>
+<!--        th:href="@{/add}"-->
+        <li><a th:if="${isLogged}"  th:href="@{/logout}" > logout </a></li>
+
+    </ul>
+
+</nav>
+
+<div class="flexContainer">
+    <th:block th:each="product : ${products}">
+        <div class="card">
+            <img th:src="@{${product.type}}" style="width:100%">
+            <div class="cardContainer">
+                <p th:text="${product.name}"></p>
+                <p th:text="${product.amount}" th:if="${isLogged}"></p>
+                <p th:text="${product.descpription}"></p>
+                <a th:if="${role == 'USER'}" th:href="@{/edit/{id}(id=${product.id})}" class="button">edit</a>
+                <a th:if="${isLogged}" th:href="@{/delete/{id}(id=${product.id})}" class="button del" >delete</a>
+                <a th:if="${!isLogged}" th:href="@{/login}" class="button">login to edit</a>
+<!--                <a th:if="${role == 'USER'}" href="#" class="button" class="del">delete</a>-->
+            </div>
+
+
+        </div>
+    </th:block>
+
+</div>
+
+
+
+
+
+
+
+
+</body>
